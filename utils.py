@@ -15,6 +15,8 @@ def read_input():
     return text, error
 
 # This function is used to clean the user inputed text and remove the punctuation.
+# TODO need to be refactor below logic because its time complexity will be O(n*m) 
+# where n is the number of characters in the string and m is the average length of the words.
 def clean_text(text):
     cleaned_text = ""
     for char in text:
