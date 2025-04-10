@@ -1,5 +1,6 @@
 import string
 
+# This function reads the user input and return the text accoriding to it
 def read_input():
     input_type = input("Would you like to enter text as a 'string' or provide a 'file' path ?").strip().lower()
     text = None
@@ -13,6 +14,7 @@ def read_input():
 
     return text, error
 
+# This function is used to clean the user inputed text and remove the punctuation.
 def clean_text(text):
     cleaned_text = ""
     for char in text:
@@ -20,7 +22,7 @@ def clean_text(text):
             cleaned_text +=char
     return cleaned_text.lower().split()
 
-
+# This function is used to count the word occurance using dict for O(1) lookup
 def count_word(input_text):
     frequency = {}
     for item in input_text:
