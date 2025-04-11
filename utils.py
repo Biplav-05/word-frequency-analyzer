@@ -1,4 +1,5 @@
 import string
+import re
 
 # This function reads the user input and return the text accoriding to it
 def read_input():
@@ -14,15 +15,19 @@ def read_input():
 
     return text, error
 
-# This function is used to clean the user inputed text and remove the punctuation.
-# TODO need to be refactor below logic because its time complexity will be O(n*m) 
-# where n is the number of characters in the string and m is the average length of the words.
-def clean_text(text):
-    cleaned_text = ""
-    for char in text:
-        if char not in string.punctuation:
-            cleaned_text +=char
-    return cleaned_text.lower().split()
+# O (n) lookup implemented
+def remove_punctuation(text):
+   # Step 1: Create a regex pattern that includes all punctuation characters
+    # `string.punctuation` contains all the common punctuation marks (e.g., !"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~)
+    # `re.escape` ensures that special characters in the punctuation set are safely handled in regex
+    # Example: escaping `.` to `\.` and `[` to `\[`
+    pattern = f"[{re.escape(string.punctuation)}]"
+
+    # Step 2: Use re.sub() to replace all occurrences of punctuation characters with an empty string
+    # The regex pattern will match any character from the punctuation set and remove it
+    # `re.sub()` operates in O(n) time, where n is the length of the text
+    # This is efficient for processing large strings
+    return re.sub(pattern, '', text)
 
 # This function is used to count the word occurance using dict for O(1) lookup
 def count_word(input_text):
