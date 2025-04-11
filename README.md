@@ -1,101 +1,95 @@
+
 # 🧠 Word Frequency Counter
 
 ## 📜 Overview
 
-A simple Python project that reads a text input, removes punctuation, and calculates the frequency of each word. It uses regular expressions for efficient text cleaning.
-
----
+A simple Python project that reads user input (either as a direct string or from a file), removes punctuation, and calculates the frequency of each word. The project uses regular expressions and efficient dictionary operations for performance.
 
 ## 📂 Project Structure
 
 ```
 .
 ├── main.py            # Main script for running the program
-├── README.md          # Project documentation (this file)
-└── utils.py           # Utility functions for text processing (e.g., remove punctuation)
+├── utils.py           # Utility functions for input, cleaning text, and word counting
+└── README.md          # Project documentation (this file)
 ```
-
----
 
 ## ⚙️ Setup
 
-Clone the repository:
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/Biplav-05/word-frequency-counter.git
 ```
 
-Navigate to the project directory:
+### 2. Navigate to the project directory
 
 ```bash
 cd word-frequency-counter
 ```
 
-No external dependencies are required; the project uses only Python's built-in libraries.
-
----
+No external dependencies are required. The project uses only Python's built-in libraries.
 
 ## 🛠️ Usage
 
-### Function: `remove_punctuation`
+Run the program:
 
-This function removes all punctuation from a given text using regular expressions.
-
-```python
-from utils import remove_punctuation
-
-# Sample text
-text = "Hello, world! Let's test: regex."
-cleaned_text = remove_punctuation(text)
-
-print(cleaned_text)
-# Output: "Hello world Lets test regex"
+```bash
+python main.py
 ```
 
-### Function: `word_frequency`
+You'll be prompted to choose the type of input:
 
-This function counts the frequency of each word in the cleaned text.
+- **string**: Directly input the text into the console.
+- **file**: This feature is a placeholder and can be implemented later.
 
-```python
-from utils import word_frequency
+### Example
 
-# Sample text
-text = "Hello, world! Python is great. Python, Python!"
-cleaned_text = remove_punctuation(text)
-frequency = word_frequency(cleaned_text)
-
-print(frequency)
-# Output: {'hello': 1, 'world': 1, 'python': 3, 'is': 1, 'great': 1}
+```
+Would you like to enter text as a 'string' or provide a 'file' path ? string
+Enter the desired strings or sentence. Hello, world! Python is great. Python, Python!
+{'hello': 1, 'world': 1, 'python': 3, 'is': 1, 'great': 1}
 ```
 
----
+## 🔍 Functions
 
-## 📊 Time Complexity
+### `read_input()`
+Prompts the user to enter either a string or file path. Returns the input text and error message if applicable.
 
-- `remove_punctuation`: O(n), where _n_ is the length of the input text.
-- `word_frequency`: O(n), where _n_ is the length of the cleaned text.
+### `remove_punctuation(text)`
+Removes all punctuation from the given text using regular expressions.  
+**Time Complexity**: O(n), where n is the length of the text.
 
----
+### `count_word(input_text)`
+Counts word frequency from a list of words using a dictionary.  
+**Time Complexity**: O(n), where n is the number of words.
+
+## 📊 Time Complexity Summary
+
+| Function           | Time Complexity |
+|--------------------|-----------------|
+| remove_punctuation | O(n)            |
+| count_word         | O(n)            |
 
 ## 🤝 Contributions
 
-1. Fork the repository.
-2. Create a new branch:
+Contributions are welcome!
 
+1. Fork the repository
+2. Create a new branch  
    ```bash
    git checkout -b feature/your-feature
    ```
-
-3. Make your changes and commit:
-
+3. Make your changes and commit  
    ```bash
-   git commit -am "Add new feature"
+   git commit -am 'Add new feature'
    ```
-
-4. Push to your branch:
-
+4. Push to your branch  
    ```bash
    git push origin feature/your-feature
    ```
+5. Create a pull request
 
-5. Create a pull request with a description of your changes.
+---
+
+Feel free to open issues for suggestions or bugs!
