@@ -1,5 +1,5 @@
 
-# 🧠 Word Frequency Counter
+# 🧠 Word Frequency Analyzer
 
 ## 📜 Overview
 
