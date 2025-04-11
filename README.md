@@ -1,38 +1,47 @@
-TODOWord Frequency Counter
-📜 Overview
+# 🧠 Word Frequency Counter
+
+## 📜 Overview
+
 A simple Python project that reads a text input, removes punctuation, and calculates the frequency of each word. It uses regular expressions for efficient text cleaning.
 
-📂 Project Structure
-bash
-Copy
-Edit
+---
+
+## 📂 Project Structure
+
+```
 .
 ├── main.py            # Main script for running the program
 ├── README.md          # Project documentation (this file)
 └── utils.py           # Utility functions for text processing (e.g., remove punctuation)
+```
 
-⚙️ Setup
+---
+
+## ⚙️ Setup
+
 Clone the repository:
 
-bash
-Copy
-Edit
+```bash
 git clone https://github.com/Biplav-05/word-frequency-counter.git
+```
+
 Navigate to the project directory:
 
-bash
-Copy
-Edit
+```bash
 cd word-frequency-counter
+```
+
 No external dependencies are required; the project uses only Python's built-in libraries.
 
-🛠️ Usage
-Function: remove_punctuation
+---
+
+## 🛠️ Usage
+
+### Function: `remove_punctuation`
+
 This function removes all punctuation from a given text using regular expressions.
 
-python
-Copy
-Edit
+```python
 from utils import remove_punctuation
 
 # Sample text
@@ -41,12 +50,13 @@ cleaned_text = remove_punctuation(text)
 
 print(cleaned_text)
 # Output: "Hello world Lets test regex"
-Function: word_frequency
+```
+
+### Function: `word_frequency`
+
 This function counts the frequency of each word in the cleaned text.
 
-python
-Copy
-Edit
+```python
 from utils import word_frequency
 
 # Sample text
@@ -56,30 +66,36 @@ frequency = word_frequency(cleaned_text)
 
 print(frequency)
 # Output: {'hello': 1, 'world': 1, 'python': 3, 'is': 1, 'great': 1}
-📊 Time Complexity
-remove_punctuation: O(n), where n is the length of the input text.
+```
 
-word_frequency: O(n), where n is the length of the cleaned text.
+---
 
-🛠️ Contributions
-Fork the repository.
+## 📊 Time Complexity
 
-Create a new branch (git checkout -b feature/your-feature).
+- `remove_punctuation`: O(n), where _n_ is the length of the input text.
+- `word_frequency`: O(n), where _n_ is the length of the cleaned text.
 
-Make your changes and commit (git commit -am 'Add new feature').
+---
 
-Push to your branch (git push origin feature/your-feature).
+## 🤝 Contributions
 
-Create a pull request with a description of your changes.
+1. Fork the repository.
+2. Create a new branch:
 
-📜 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+   ```bash
+   git checkout -b feature/your-feature
+   ```
 
-Notes:
-You can replace your-username in the clone command with your actual GitHub username.
+3. Make your changes and commit:
 
-The sections like "Setup", "Usage", and "Contributions" give users easy-to-follow instructions.
+   ```bash
+   git commit -am "Add new feature"
+   ```
 
-Make sure you have a LICENSE file in the project for the license details, or adjust accordingly if you're not using MIT.
+4. Push to your branch:
 
-Let me know if you need further changes!
+   ```bash
+   git push origin feature/your-feature
+   ```
+
+5. Create a pull request with a description of your changes.

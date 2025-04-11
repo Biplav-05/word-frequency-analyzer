@@ -1,37 +1,95 @@
-import string
-import re
 
-# This function reads the user input and return the text accoriding to it
-def read_input():
-    input_type = input("Would you like to enter text as a 'string' or provide a 'file' path ?").strip().lower()
-    text = None
-    error ={"message": "Invalid Option selected."}
-    if input_type == "file":
-        # TODO
-        pass
-    
-    elif input_type ==  "string":
-        text = input("Enter the desired strings or sentese.").strip()
+# 🧠 Word Frequency Counter
 
-    return text, error
+## 📜 Overview
 
-# O (n) lookup implemented
-def remove_punctuation(text):
-   # Step 1: Create a regex pattern that includes all punctuation characters
-    # `string.punctuation` contains all the common punctuation marks (e.g., !"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~)
-    # `re.escape` ensures that special characters in the punctuation set are safely handled in regex
-    # Example: escaping `.` to `\.` and `[` to `\[`
-    pattern = f"[{re.escape(string.punctuation)}]"
+A simple Python project that reads user input (either as a direct string or from a file), removes punctuation, and calculates the frequency of each word. The project uses regular expressions and efficient dictionary operations for performance.
 
-    # Step 2: Use re.sub() to replace all occurrences of punctuation characters with an empty string
-    # The regex pattern will match any character from the punctuation set and remove it
-    # `re.sub()` operates in O(n) time, where n is the length of the text
-    # This is efficient for processing large strings
-    return re.sub(pattern, '', text)
+## 📂 Project Structure
 
-# This function is used to count the word occurance using dict for O(1) lookup
-def count_word(input_text):
-    frequency = {}
-    for item in input_text:
-        frequency[item] = frequency.get(item, 0)+1
-    return frequency
+```
+.
+├── main.py            # Main script for running the program
+├── utils.py           # Utility functions for input, cleaning text, and word counting
+└── README.md          # Project documentation (this file)
+```
+
+## ⚙️ Setup
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Biplav-05/word-frequency-counter.git
+```
+
+### 2. Navigate to the project directory
+
+```bash
+cd word-frequency-counter
+```
+
+No external dependencies are required. The project uses only Python's built-in libraries.
+
+## 🛠️ Usage
+
+Run the program:
+
+```bash
+python main.py
+```
+
+You'll be prompted to choose the type of input:
+
+- **string**: Directly input the text into the console.
+- **file**: This feature is a placeholder and can be implemented later.
+
+### Example
+
+```
+Would you like to enter text as a 'string' or provide a 'file' path ? string
+Enter the desired strings or sentence. Hello, world! Python is great. Python, Python!
+{'hello': 1, 'world': 1, 'python': 3, 'is': 1, 'great': 1}
+```
+
+## 🔍 Functions
+
+### `read_input()`
+Prompts the user to enter either a string or file path. Returns the input text and error message if applicable.
+
+### `remove_punctuation(text)`
+Removes all punctuation from the given text using regular expressions.  
+**Time Complexity**: O(n), where n is the length of the text.
+
+### `count_word(input_text)`
+Counts word frequency from a list of words using a dictionary.  
+**Time Complexity**: O(n), where n is the number of words.
+
+## 📊 Time Complexity Summary
+
+| Function           | Time Complexity |
+|--------------------|-----------------|
+| remove_punctuation | O(n)            |
+| count_word         | O(n)            |
+
+## 🤝 Contributions
+
+Contributions are welcome!
+
+1. Fork the repository
+2. Create a new branch  
+   ```bash
+   git checkout -b feature/your-feature
+   ```
+3. Make your changes and commit  
+   ```bash
+   git commit -am 'Add new feature'
+   ```
+4. Push to your branch  
+   ```bash
+   git push origin feature/your-feature
+   ```
+5. Create a pull request
+
+---
+
+Feel free to open issues for suggestions or bugs!
