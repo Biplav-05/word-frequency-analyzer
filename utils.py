@@ -1,19 +1,25 @@
 import string
 import re
 
-# This function reads the user input and return the text accoriding to it
 def read_input():
-    input_type = input("Would you like to enter text as a 'string' or provide a 'file' path ?").strip().lower()
-    text = None
-    error ={"message": "Invalid Option selected."}
-    if input_type == "file":
-        # TODO
-        pass
+    print("Would you like to enter text as a 'string' or provide a 'file' path?")
+    input_type = input("Enter 1 for string or 2 for file path: ").strip()
     
-    elif input_type ==  "string":
-        text = input("Enter the desired strings or sentese.").strip()
+    text = None
+    error = {"message": None}
 
+    # Normalize input to text labels
+    match input_type:
+        case "1" | "string":
+            text = input("Enter the desired string or sentence: ").strip()
+        case "2" | "file":
+            # TODO: Implement file input later
+            error['message'] = "File handling functionality will be implemented in the future."
+        case _:
+            error['message'] = "Invalid option selected. Please select a valid option (1 or 2)."
+    
     return text, error
+
 
 # O (n) lookup implemented
 def remove_punctuation(text):
@@ -28,6 +34,7 @@ def remove_punctuation(text):
     # `re.sub()` operates in O(n) time, where n is the length of the text
     # This is efficient for processing large strings
     return re.sub(pattern, '', text)
+
 
 # This function is used to count the word occurance using dict for O(1) lookup
 def count_word(input_text):

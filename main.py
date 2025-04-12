@@ -1,22 +1,24 @@
 from utils import read_input, remove_punctuation, count_word
-# Parent function
+
 def main():
-    # Read user input and if error occur output the error to console.
+    """Main entry point of the program."""
+
+    # Step 1: Read input from user
     text, error = read_input()
     if text is None:
-        print(error['message'])
+        print("Error:", error['message'])
+        return  # Exit early on error
 
-    # After reading the text from input, this function clean the text like exclude special character and retrun list of string.
+    # Step 2: Clean the input text (remove punctuation/special characters)
     cleaned_text = remove_punctuation(text)
 
-    # # After getting cleaned file, this function count the word occurance or frequency and output the word with frequency in dictionary.
-    output = count_word(cleaned_text.lower().split())
+    # Step 3: Count word occurrences
+    word_list = cleaned_text.lower().split()
+    word_frequencies = count_word(word_list)
 
-    print(output)
-    
+    # Step 4: Display the output
+    print("Word Frequencies:", word_frequencies)
 
 
-# Main function
 if __name__ == "__main__":
-    # Entrypoint for the program.
     main()
