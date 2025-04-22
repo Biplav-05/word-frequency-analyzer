@@ -40,8 +40,8 @@ python main.py
 
 You'll be prompted to choose the type of input:
 
-- **string**: Directly input the text into the console.
-- **file**: This feature is a placeholder and can be implemented later.
+- **string**: Enter the text directly into the console.
+- **file**: Provide the file path via the console to read text from a file.
 
 ### Example
 
@@ -82,7 +82,7 @@ Contributions are welcome!
    ```
 3. Make your changes and commit  
    ```bash
-   git commit -am 'Add new feature'
+   git commit -m 'Add new feature'
    ```
 4. Push to your branch  
    ```bash
