@@ -19,7 +19,7 @@ A simple Python project that reads user input (either as a direct string or from
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Biplav-05/word-frequency-counter.git
+https://github.com/Biplav-05/word-frequency-analyzer.git word-frequency-counter
 ```
 
 ### 2. Navigate to the project directory
