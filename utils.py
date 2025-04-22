@@ -18,7 +18,6 @@ def read_input():
                 file_path = input("Enter the file path: ").strip()
                 with open(file_path, 'r') as _file:
                     text = _file.read().strip()
-                    print(f'File content: {text}')
             except Exception as e:
                 error['message'] = "Failed to read the file. Check if the file path is valid and the file is accessible."
         
