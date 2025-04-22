@@ -46,8 +46,9 @@ You'll be prompted to choose the type of input:
 ### Example
 
 ```
-Would you like to enter text as a 'string' or provide a 'file' path ? string
-Enter the desired strings or sentence. Hello, world! Python is great. Python, Python!
+Would you like to enter text as a 'string' or provide a 'file' path ?
+Enter 1 for string or 2 for file path: 1 
+Enter the desired string or sentence: Hello, world! Python is great. Python, Python!
 {'hello': 1, 'world': 1, 'python': 3, 'is': 1, 'great': 1}
 ```
 
