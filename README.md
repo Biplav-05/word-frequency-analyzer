@@ -40,14 +40,15 @@ python main.py
 
 You'll be prompted to choose the type of input:
 
-- **string**: Directly input the text into the console.
-- **file**: This feature is a placeholder and can be implemented later.
+- **string**: Enter the text directly into the console.
+- **file**: Provide the file path via the console to read text from a file.
 
 ### Example
 
 ```
-Would you like to enter text as a 'string' or provide a 'file' path ? string
-Enter the desired strings or sentence. Hello, world! Python is great. Python, Python!
+Would you like to enter text as a 'string' or provide a 'file' path ?
+Enter 1 for string or 2 for file path: 1 
+Enter the desired string or sentence: Hello, world! Python is great. Python, Python!
 {'hello': 1, 'world': 1, 'python': 3, 'is': 1, 'great': 1}
 ```
 
@@ -82,7 +83,7 @@ Contributions are welcome!
    ```
 3. Make your changes and commit  
    ```bash
-   git commit -am 'Add new feature'
+   git commit -m 'Add new feature'
    ```
 4. Push to your branch  
    ```bash

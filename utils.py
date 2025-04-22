@@ -12,9 +12,15 @@ def read_input():
     match input_type:
         case "1" | "string":
             text = input("Enter the desired string or sentence: ").strip()
+        
         case "2" | "file":
-            # TODO: Implement file input later
-            error['message'] = "File handling functionality will be implemented in the future."
+            try:
+                file_path = input("Enter the file path: ").strip()
+                with open(file_path, 'r') as _file:
+                    text = _file.read().strip()
+            except Exception as e:
+                error['message'] = "Failed to read the file. Check if the file path is valid and the file is accessible."
+        
         case _:
             error['message'] = "Invalid option selected. Please select a valid option (1 or 2)."
     
@@ -35,10 +41,10 @@ def remove_punctuation(text):
     # This is efficient for processing large strings
     return re.sub(pattern, '', text)
 
-
-# This function is used to count the word occurance using dict for O(1) lookup
+# Counts the frequency of each word in the input using a dictionary for efficient O(1) lookups
+# TODO: Consider using a set instead of a dictionary for better memory efficiency
 def count_word(input_text):
     frequency = {}
-    for item in input_text:
-        frequency[item] = frequency.get(item, 0)+1
+    for word in input_text:
+        frequency[word] = frequency.get(word, 0)+1
     return frequency
